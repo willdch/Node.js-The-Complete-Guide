@@ -10,6 +10,8 @@ const shopRoutes = require('./routes/shop');
 
 
 app.use(bodyParser.urlencoded({extended: true}));
+// ⬇︎ serves the public file statically to allow for use of css style sheets and can be used for many other things.
+app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/admin', adminRoutes);
 app.use(shopRoutes);
